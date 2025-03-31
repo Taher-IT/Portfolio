@@ -1,0 +1,76 @@
+.navbar {
+    background-color: var(--logo-job) !important;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-name {
+    font-family: 'Anta', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--logo-name);
+    margin: 0;
+    padding: 0;
+}
+
+.logo-job {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--primary-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--primary-bg);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--logo-name);
+    }
+}
