@@ -7,16 +7,16 @@
         </a>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#why-me">Why Me</a>
+                <a class="nav-link" [class.active]="isActive('why-me')" href="#why-me">Why Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Skills</a>
+                <a class="nav-link" [class.active]="isActive('skills')" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link" [class.active]="isActive('projects')" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" [class.active]="isActive('contact')" href="#contact">Contact</a>
             </li>
         </ul>
     </div>

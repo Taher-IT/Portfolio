@@ -31,8 +31,9 @@
     height: 410px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    align-content: flex-start;
+    gap: 15px 10px;
 }
 
 .logo-container {
@@ -41,15 +42,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 80px;
+    height: 110px;
 
     .logo-img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
         margin-bottom: 8px;
     }
 
     .logo-description {
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         color: var(--logo-job);
         margin: 0;
     }
@@ -62,9 +68,7 @@
 }
   
 .background-image {
-    background-image: url('https://via.placeholder.com/380x380');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     width: 380px;
     height: 380px;
     display: flex;
@@ -76,6 +80,46 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: opacity 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 1;
+    }
+
+    &::before {
+        background-image: url('/assets/img/skills/Ellipse1.png');
+        opacity: 1;
+    }
+
+    &::after {
+        background-image: url('/assets/img/skills/Ellipse2.png');
+        opacity: 0;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 0;
+        }
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    .learning-text,
+    .logo-group {
+        position: relative;
+        z-index: 2;
+    }
 }
   
 .learning-text {

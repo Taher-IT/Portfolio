@@ -18,7 +18,6 @@
     }
 }
 
-
 .container {
     display: flex;
     justify-content: space-between;
@@ -76,9 +75,32 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 500;
     font-size: 26px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 12px;
 
     &:hover {
         color: var(--logo-name);
+    }
+
+    &.active {
+        color: var(--logo-name);
+
+        &::after {
+            content: '';
+            background-image: url('/assets/img/logos/MenuBG.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: -1;
+            filter: brightness(1.5) contrast(2.5);
+        }
     }
 }
