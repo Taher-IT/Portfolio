@@ -7,42 +7,62 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-  }
+}
   
-  .skills-title {
+.skills-title {
     font-family: 'Anta', sans-serif;
     font-weight: 400;
     font-size: 60px;
-    color: var(--logo-job); /* Stelle sicher, dass --logo-job in deiner globalen Stylesheet definiert ist */
+    color: var(--logo-job);
     margin-top: 20px;
     padding-bottom: 80px;
     text-align: center;
-  }
+}
   
-  .skills-box-container {
+.skills-box-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 70px;
-  }
+}
   
-  .skills-box {
+.skills-box {
     width: 410px;
     height: 410px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-  }
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .logo-img {
+        margin-bottom: 8px;
+    }
+
+    .logo-description {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: var(--logo-job);
+        margin: 0;
+    }
+}
   
-  .skills-box-right {
+.skills-box-right {
     width: 410px;
     height: 410px;
     position: relative;
-  }
+}
   
-  .background-image {
-    background-image: url('https://via.placeholder.com/380x380'); /* Platzhalter für das Hintergrundbild */
+.background-image {
+    background-image: url('https://via.placeholder.com/380x380');
     background-size: cover;
     background-position: center;
     width: 380px;
@@ -56,35 +76,25 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
-  }
+}
   
-  .learning-text {
+.learning-text {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: var(--logo-name); /* Stelle sicher, dass --logo-name in deiner globalen Stylesheet definiert ist */
+    color: var(--logo-job);
     text-align: center;
     margin-bottom: 10px;
-  }
+}
   
-  .logo-group {
+.logo-group {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 15px;
-  }
+}
   
-  .logo-small {
+.logo-small {
     width: 54px;
     height: 54px;
-  }
-  
-  .motivation-text {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: var(--logo-name); /* Stelle sicher, dass --logo-name in deiner globalen Stylesheet definiert ist */
-    text-align: center;
-    margin-top: 15px;
-  }
-  
+}

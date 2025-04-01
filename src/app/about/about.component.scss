@@ -1,7 +1,8 @@
 .grid-box {
     width: 860px;
-    height: 320px;
+    height: 310px;
     border-radius: 20px;
+    margin-bottom: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,9 +13,9 @@
     .cta-button {
         border-radius: 28px !important;
     }
-    
+
     p {
-        color: var(--logo-name);        
+        color: var(--logo-name);
     }
 
     .title {
@@ -26,6 +27,7 @@
 
     .content {
         width: 100%;
+
         .left {
             display: flex;
             align-items: center;
@@ -38,7 +40,7 @@
             p {
                 font-size: 20px;
                 font-family: 'Josefin Sans', sans-serif;
-                
+
                 .p1 {
                     color: var(--logo-job);
                     font-size: 30px;
@@ -52,7 +54,7 @@
             font-size: 18px;
             line-height: 1.5;
             text-align: left;
-            
+
             .p3 {
                 color: var(--logo-name);
                 font-size: 18px;

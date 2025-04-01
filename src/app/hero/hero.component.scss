@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   gap: 40px;
   height: 100vh;
   box-sizing: border-box;
@@ -15,6 +15,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      .heroPicBG1 {
+        opacity: 0;
+      }
+      .heroPicBG2 {
+        opacity: 1;
+      }
+    }
   }
 
   .info-container {
@@ -50,7 +59,6 @@
         .logo-default {
           opacity: 0;
         }
-
         .logo-hover {
           opacity: 1;
         }
@@ -61,7 +69,6 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 120%;
-        letter-spacing: 0%;
         color: var(--logo-name);
         margin: 0;
         padding: 0;
@@ -75,7 +82,6 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 120%;
-        letter-spacing: 0%;
         color: var(--logo-job);
         margin: 0;
         padding: 0;
@@ -88,7 +94,7 @@
 }
 
 .heroPic {
-  height: 680px;
+  height: 780px;
   display: block;
   position: relative;
   z-index: 3;
@@ -97,11 +103,26 @@
 
 .heroPicBG1 {
   position: absolute;
+  width: 640px;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   height: auto;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.heroPicBG2 {
+  position: absolute;
+  width: 640px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
 h1 {
@@ -162,7 +183,6 @@ h2 {
         .default {
           opacity: 0;
         }
-
         .hover {
           opacity: 1;
         }
