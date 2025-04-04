@@ -1,0 +1,24 @@
+<div class="references-section">
+    <h2 class="section-title">Need a teamplayer? Here is what my colleagues said about me</h2>
+    
+    <div class="references-container">
+        <div class="references-box">
+            @for (ref of references; track ref.name) {
+                <div class="reference-card">
+                    <div class="reference-bg">
+                        <div class="reference-content">
+                            <h3 class="reference-name">{{ ref.name }}</h3>
+                            <p class="reference-project">
+                                Project: <span class="project-name">{{ ref.project }}</span>
+                            </p>
+                            <p class="reference-quote">{{ ref.quote }}</p>
+                            @if (ref.link) {
+                                <a [href]="ref.link" target="_blank" class="reference-link">Linked to Profile</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

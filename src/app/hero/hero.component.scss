@@ -1,93 +1,100 @@
-.atf-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  margin-bottom: 20px;
-  gap: 40px;
-  height: 100vh;
-  box-sizing: border-box;
-  position: relative;
+.hero-section {
+  scroll-margin-top: 100px;
+  height: 100vs;
 
-  .image-container {
+  .atf-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 20px;
+    gap: 40px;
+    height: 100vh;
+    box-sizing: border-box;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    &:hover {
-      .heroPicBG1 {
-        opacity: 0;
-      }
-      .heroPicBG2 {
-        opacity: 1;
-      }
-    }
-  }
-
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40px;
-
-    .logo-container {
+    .image-container {
       position: relative;
-      display: inline-block;
-      min-height: 80px;
-
-      img {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: opacity 0.3s ease;
-      }
-
-      .logo-default {
-        opacity: 1;
-      }
-
-      .logo-hover {
-        opacity: 0;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
-        .logo-default {
+        .heroPicBG1 {
           opacity: 0;
         }
-        .logo-hover {
+
+        .heroPicBG2 {
           opacity: 1;
         }
       }
+    }
 
-      .logo-name {
-        font-family: 'Anta', sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-        color: var(--logo-name);
-        margin: 0;
-        padding: 0;
-        display: block;
-        text-align: center;
-        margin-top: 42px;
-      }
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 40px;
 
-      .logo-job {
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 120%;
-        color: var(--logo-job);
-        margin: 0;
-        padding: 0;
-        display: block;
-        text-align: center;
-        margin-top: 5px;
+      .logo-container {
+        position: relative;
+        display: inline-block;
+        min-height: 80px;
+
+        img {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: opacity 0.3s ease;
+        }
+
+        .logo-default {
+          opacity: 1;
+        }
+
+        .logo-hover {
+          opacity: 0;
+        }
+
+        &:hover {
+          .logo-default {
+            opacity: 0;
+          }
+
+          .logo-hover {
+            opacity: 1;
+          }
+        }
+
+        .logo-name {
+          font-family: 'Anta', sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 120%;
+          color: var(--logo-name);
+          margin: 0;
+          padding: 0;
+          display: block;
+          text-align: center;
+          margin-top: 42px;
+        }
+
+        .logo-job {
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 120%;
+          color: var(--logo-job);
+          margin: 0;
+          padding: 0;
+          display: block;
+          text-align: center;
+          margin-top: 5px;
+        }
       }
     }
   }
@@ -132,6 +139,7 @@ h1 {
   line-height: 120%;
   text-align: center;
   margin-bottom: 10px;
+  color: var(--logo-name);
 }
 
 h2 {
@@ -141,6 +149,7 @@ h2 {
   line-height: 120%;
   text-align: center;
   margin-top: 0;
+  color: var(--logo-name);
 }
 
 .social-container {
@@ -183,6 +192,7 @@ h2 {
         .default {
           opacity: 0;
         }
+
         .hover {
           opacity: 1;
         }

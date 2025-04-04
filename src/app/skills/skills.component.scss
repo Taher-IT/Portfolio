@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    scroll-margin-top: 140px;
 }
   
 .skills-title {
@@ -141,4 +142,8 @@
 .logo-small {
     width: 54px;
     height: 54px;
+}
+
+.section-spacer {
+    height: 100px;
 }
