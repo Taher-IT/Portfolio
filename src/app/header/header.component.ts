@@ -7,23 +7,27 @@ import { filter } from 'rxjs/operators';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   isScrolled: boolean = false;
+  isImprintPage: boolean = false;
   currentSection: string = '';
 
   constructor(private router: Router) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.currentSection = this.router.url.split('#')[1] || '';
+    ).subscribe((event: any) => {
+      this.isImprintPage = event.url === '/imprint';
+      this.currentSection = event.url.split('#')[1] || '';
     });
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 730;
+    if (!this.isImprintPage) {
+      this.isScrolled = window.scrollY > 730;
+    }
   }
 
   isActive(section: string): boolean {

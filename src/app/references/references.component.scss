@@ -41,15 +41,40 @@
 .reference-bg {
     width: 100%;
     height: 100%;
-    background-image: url('/assets/img/references/Ellipse02.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
-    transition: background-image 0.3s ease;
     
-    &:hover {
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 0.5s ease-in-out;
+        z-index: 1;
+    }
+
+    &::before {
+        background-image: url('/assets/img/references/Ellipse02.png');
+        opacity: 1;
+    }
+
+    &::after {
         background-image: url('/assets/img/references/Ellipse03.png');
+        opacity: 0;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 0;
+        }
+        &::after {
+            opacity: 1;
+        }
     }
 }
 
@@ -60,6 +85,7 @@
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: center;
+    z-index: 2;
 }
 
 .reference-name {

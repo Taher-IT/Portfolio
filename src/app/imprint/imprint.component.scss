@@ -1,0 +1,27 @@
+.imprint-container {
+    position: relative;
+    min-height: calc(100vh - 120px);
+    padding: 2rem;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    overflow-y: auto;
+    
+    .imprint-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--logo-job);
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    
+    &:hover {
+        color: var(--logo-name);
+        text-decoration: underline;
+    }
+}
