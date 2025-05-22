@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  
+
   technologies = [
     { name: 'Angular', logo: 'assets/img/skills/Angular.png', description: 'Angular' },
     { name: 'TypeScript', logo: 'assets/img/skills/TypeScript.png', description: 'TypeScript' },

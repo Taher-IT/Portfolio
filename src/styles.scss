@@ -1,10 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
     --primary-bg: #262E34;
     --secondary-bg: #2d3840;
     --logo-name: #F8F5EC;
     --logo-job: #89BCD9;
     --menu-bg: #262E34 15%;
+    --error: #E44C36;
 }
 
 /* anta-regular - latin */
@@ -20,12 +20,14 @@
 
 /* roboto-mono-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Roboto Mono';
     font-style: normal;
     font-weight: 400;
-    src: url('../src/assets/fonts/roboto-mono-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+    src: url('../src/assets/fonts/roboto-mono-v23-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 /* josefin-sans-100 - latin */
 @font-face {

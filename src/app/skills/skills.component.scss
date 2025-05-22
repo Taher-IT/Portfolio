@@ -9,7 +9,7 @@
     position: relative;
     scroll-margin-top: 140px;
 }
-  
+
 .skills-title {
     font-family: 'Anta', sans-serif;
     font-weight: 400;
@@ -19,14 +19,14 @@
     padding-bottom: 80px;
     text-align: center;
 }
-  
+
 .skills-box-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 70px;
 }
-  
+
 .skills-box {
     width: 410px;
     height: 410px;
@@ -61,13 +61,13 @@
         margin: 0;
     }
 }
-  
+
 .skills-box-right {
     width: 410px;
     height: 410px;
     position: relative;
 }
-  
+
 .background-image {
     position: relative;
     width: 380px;
@@ -111,6 +111,7 @@
         &::before {
             opacity: 0;
         }
+
         &::after {
             opacity: 1;
         }
@@ -122,7 +123,7 @@
         z-index: 2;
     }
 }
-  
+
 .learning-text {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
@@ -131,14 +132,14 @@
     text-align: center;
     margin-bottom: 10px;
 }
-  
+
 .logo-group {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-bottom: 15px;
 }
-  
+
 .logo-small {
     width: 54px;
     height: 54px;

@@ -11,21 +11,22 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent {
   isScrolled: boolean = false;
-  isImprintPage: boolean = false;
+  isSpecialPage: boolean = false;
   currentSection: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router) { }
+  ngOnInit() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
-      this.isImprintPage = event.url === '/imprint';
-      this.currentSection = event.url.split('#')[1] || '';
+    ).subscribe(() => {
+      this.isSpecialPage = ['/imprint', '/privacy'].includes(this.router.url);
+      this.isScrolled = window.scrollY > 730 && !this.isSpecialPage;
     });
   }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (!this.isImprintPage) {
+    if (!this.isSpecialPage) {
       this.isScrolled = window.scrollY > 730;
     }
   }

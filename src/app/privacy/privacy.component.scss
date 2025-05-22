@@ -1,15 +1,16 @@
-.imprint-container {
+.privacy-container {
     position: relative;
     min-height: calc(100vh - 120px);
-    padding: 2.5rem;
+    padding: 2.5rem 160px;
     margin-top: 80px;
     margin-bottom: 60px;
     overflow-y: auto;
     color: var(--logo-name);
     font-family: 'Josefin Sans', sans-serif;
 
-    .imprint-content {
-        max-width: 800px;
+    .privacy-content {
+        max-width: 100%;
+        width: min(100%, 1440px);
         margin: 0 auto;
         padding: 20px;
         font-size: 1rem;
@@ -31,9 +32,17 @@
             margin-top: 1.5rem;
         }
 
-        p {
+        p,
+        ul {
             margin-bottom: 1rem;
-            max-width: 320px;
+        }
+
+        a {
+            color: var(--logo-job);
+
+            &:hover {
+                color: var(--logo-name);
+            }
         }
     }
 }

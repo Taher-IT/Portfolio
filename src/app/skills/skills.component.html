@@ -1,29 +1,30 @@
 <div id="skills" class="skills-container">
-    <div class="section-spacer"></div>
-    <h2 class="skills-title">My Skills</h2>
-    
-    <div class="skills-box-container">
-      
-      <div class="skills-box">
-        <div *ngFor="let tech of technologies" class="logo-container">
-          <img [src]="tech.logo" alt="{{ tech.name }}" class="logo-img">
-          <p class="logo-description">{{ tech.description }}</p>
-        </div>
-      </div>
-  
-      <div class="skills-box-right">
-        <div class="background-image">
-          <p class="learning-text">I am currently learning</p>
-          
-          <div class="logo-group">
-            <img src="assets/img/skills/Frame_301.png" alt="Logo1" class="logo-small">
-            <img src="assets/img/skills/Frame_302.png" alt="Logo2" class="logo-small">
-          </div>
-          
-          <p class="learning-text">
-            Show that you are motivated to continually improve your skills, implement innovative solutions and stay abreast of new technologies.
-          </p>
-        </div>
+  <div class="section-spacer"></div>
+  <h2 class="skills-title">My Skills</h2>
+
+  <div class="skills-box-container">
+
+    <div class="skills-box">
+      <div *ngFor="let tech of technologies" class="logo-container">
+        <img [src]="tech.logo" alt="{{ tech.name }}" class="logo-img">
+        <p class="logo-description">{{ tech.description }}</p>
       </div>
     </div>
+
+    <div class="skills-box-right">
+      <div class="background-image">
+        <p class="learning-text">I am currently learning</p>
+
+        <div class="logo-group">
+          <img src="assets/img/skills/Frame_301.png" alt="Logo1" class="logo-small">
+          <img src="assets/img/skills/Frame_302.png" alt="Logo2" class="logo-small">
+        </div>
+
+        <p class="learning-text">
+          Show that you are motivated to continually improve your skills, implement innovative solutions and stay
+          abreast of new technologies.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'app-privacy',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './imprint.component.html',
-  styleUrl: './imprint.component.scss'
+  templateUrl: './privacy.component.html',
+  styleUrl: './privacy.component.scss'
 })
-export class ImprintComponent implements OnInit {
+export class PrivacyComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0, 0);
   }
