@@ -24,26 +24,41 @@
         </div>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="form-row">
             <div class="form-group">
-                <label>Your Name</label>
-                <input type="text">
+                <label for="name">Your Name...</label>
+                <input [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
+                    placeholder="Please enter your Name..." required
+                    pattern="^(?=.*[A-Za-zÄÖÜäöüß])[A-Za-zÄÖÜäöüß\s\-']+$" #name="ngModel">
+                @if (!name.valid && name.touched) {
+                <span>Please enter a valid name</span>
+                }
             </div>
             <div class="form-group">
-                <label>Your Email</label>
-                <input type="email">
+                <label for="email">Your Email</label>
+                <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                    placeholder="Please enter your Email..." required
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
+                @if (!email.valid && email.touched) {
+                <span>Please enter a valid email address</span>
+                }
             </div>
         </div>
 
         <div class="form-group message-group">
-            <label>Your Message</label>
-            <textarea rows="5"></textarea>
+            <label for="message">Your Message</label>
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" rows="5" id="message" name="message"
+                placeholder="Hey, how can i help you?" required minlength="10"></textarea>
+            @if (!message.valid && message.touched) {
+            <span>Please enter a message</span>
+            }
         </div>
 
         <div class="privacy-check">
             <div class="checkbox-container">
-                <input type="checkbox" id="privacyCheck" class="checkbox-input" (change)="onCheckboxChange()">
+                <input type="checkbox" id="privacyCheck" class="checkbox-input" (change)="onCheckboxChange()" required
+                    [checked]="isChecked">
                 <label for="privacyCheck" class="checkbox-label">
                     <img [src]="getCheckboxImage()" alt="Checkbox" class="check-icon">
                 </label>
@@ -52,7 +67,16 @@
                     processing of my data as outlined.
                 </label>
             </div>
-            <button type="submit" class="submit-btn" [disabled]="!formValid">
+            <!-- <button type="submit" class="submit-btn">
                 Send
+            </button> -->
+            <button type="submit" class="submit-btn" [disabled]="!contactForm.valid || !isChecked || isSending">
+                @if (isSending) {
+                <span>Sending...</span>
+                } @else {
+                <span>Send</span>
+                }
             </button>
         </div>
+    </form>
+</div>
