@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
@@ -12,6 +13,8 @@ import { RouterModule } from '@angular/router';
 
 export class ContactComponent {
 
+  http = inject(HttpClient);
+
   isChecked = false;
   isHovered = false;
   showError = false;
@@ -21,6 +24,7 @@ export class ContactComponent {
     email: "",
     message: "",
   }
+  mailTest = false;
 
   onCheckboxChange() {
     this.isChecked = !this.isChecked;
@@ -54,26 +58,34 @@ export class ContactComponent {
     this.isSending = false;
   }
 
-  blockSend(): Promise<void> {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        console.log(this.contactData); // Delete Later
-        resolve();
-      }, 1500);
-    });
-  }
+  post = {
+    endPoint: 'https://taher-abdel-megid.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
-  async onSubmit(ngForm: NgForm): Promise<void> {
-    if (!this.isChecked) {
-      this.showError = true;
-      return;
-    }
-    if (ngForm.valid) {
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.isSending = true;
-      await this.blockSend();
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            console.log('it worked!');
+            this.resetForm(ngForm);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       this.resetForm(ngForm);
     }
   }
 
 }
-
