@@ -5,21 +5,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    left: 0;
+    // left: 0;
     z-index: 1000;
     transition: all 0.3s ease;
 
-    &.scrolled {
-        bottom: auto;
-        top: 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
+    &.scrolled,
     &.special-page {
-        bottom: auto;
+        position: fixed;
         top: 0;
+        bottom: auto;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 }
@@ -83,7 +79,6 @@
     font-size: 26px;
     transition: all 0.3s ease;
     position: relative;
-    padding: 8px 12px;
 
     &:hover {
         color: var(--logo-name);

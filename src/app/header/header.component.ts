@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -9,26 +9,41 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   isScrolled: boolean = false;
   isSpecialPage: boolean = false;
   currentSection: string = '';
 
   constructor(private router: Router) { }
-  ngOnInit() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.isSpecialPage = ['/imprint', '/privacy'].includes(this.router.url);
-      this.isScrolled = window.scrollY > 730 && !this.isSpecialPage;
-    });
+
+  ngAfterViewInit() {
+    this.setupScrollListener();
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    if (!this.isSpecialPage) {
-      this.isScrolled = window.scrollY > 730;
-    }
+  ngOnInit() {
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(() =>
+        this.isSpecialPage = ['/imprint', '/privacy'].includes(this.router.url)
+      );
+  }
+
+  setupScrollListener() {
+    window.addEventListener('scroll', () => {
+      if (this.isSpecialPage) {
+        this.isScrolled = true;
+        return;
+      }
+
+      const heroImage = document.querySelector('.heroPic');
+      if (!heroImage) {
+        this.isScrolled = true;
+        return;
+      }
+
+      const imageBottom = heroImage.getBoundingClientRect().bottom;
+      // 128px is your header height - adjust if different
+      this.isScrolled = imageBottom <= 0;
+    });
   }
 
   isActive(section: string): boolean {

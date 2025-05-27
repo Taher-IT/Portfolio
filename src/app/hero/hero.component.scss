@@ -1,6 +1,12 @@
+:host {
+  display: block;
+  position: relative;
+}
+
 .hero-section {
-  scroll-margin-top: 100px;
+  // scroll-margin-top: 100px;
   height: 100vh;
+  position: relative;
 
   .atf-container {
     display: flex;

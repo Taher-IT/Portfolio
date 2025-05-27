@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-imprint',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, HeaderComponent],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss'
 })
