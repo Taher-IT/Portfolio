@@ -10,26 +10,42 @@
     color: var(--logo-job);
     text-align: center;
     margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.references-background {
+    width: 100%;
 }
 
 .references-container {
-    width: 1240px;
-    height: 500px;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 30px;
     position: relative;
 }
 
 .references-box {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    padding: 20px 0;
     gap: 14px;
-    height: 410px;
-    padding: 20px;
     overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: auto;
+    -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
-        display: none;
+        height: 18px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--logo-job);
+        border-radius: 8px;
     }
 }
 
@@ -92,9 +108,10 @@
 .reference-name {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 24px;
     color: var(--logo-name);
     margin-bottom: 8px;
+    margin-top: 30px;
 }
 
 .reference-project {
@@ -102,7 +119,7 @@
     font-weight: 400;
     font-size: 18px;
     color: var(--logo-name);
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .project-name {
@@ -112,10 +129,10 @@
 .reference-quote {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 17px;
     letter-spacing: 0;
     color: var(--logo-name);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.5;
 }
 

@@ -1,10 +1,10 @@
-.about-section {
-  scroll-margin-top: 100px;
-  position: relative;
+#about {
+  scroll-margin: 128px;
+}
 
-  .section-spacer {
-    height: 100px;
-  }
+.about-section {
+  margin-top: 100px;
+  position: relative;
 
   .grid-box {
     width: 860px;

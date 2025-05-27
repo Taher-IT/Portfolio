@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements AfterViewInit,OnInit {
   isScrolled: boolean = false;
   isSpecialPage: boolean = false;
   currentSection: string = '';
@@ -30,19 +30,23 @@ export class HeaderComponent implements AfterViewInit {
   setupScrollListener() {
     window.addEventListener('scroll', () => {
       if (this.isSpecialPage) {
-        this.isScrolled = true;
+        this.isScrolled = true;          // header always fixed on special pages
         return;
       }
 
-      const heroImage = document.querySelector('.heroPic');
-      if (!heroImage) {
-        this.isScrolled = true;
+      const heroSection = document.querySelector('.hero-section') as HTMLElement | null;
+      const navbar = document.querySelector('.navbar') as HTMLElement | null;
+
+      if (!heroSection || !navbar) {
+        this.isScrolled = true;          // fail-safe on pages without hero
         return;
       }
 
-      const imageBottom = heroImage.getBoundingClientRect().bottom;
-      // 128px is your header height - adjust if different
-      this.isScrolled = imageBottom <= 0;
+      const sectionBottom = heroSection.getBoundingClientRect().bottom;
+      const headerHeight = navbar.offsetHeight || 128;           // matches .navbar
+
+      // stick once the hero has scrolled past the header’s height
+      this.isScrolled = sectionBottom <= headerHeight;
     });
   }
 
