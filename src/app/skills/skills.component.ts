@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+import { TranslationService } from '../services/translation.service';
+
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -9,6 +11,9 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  constructor(public ts: TranslationService) {
+
+  }
 
   technologies = [
     { name: 'Angular', logo: 'assets/img/skills/Angular.png', description: 'Angular' },

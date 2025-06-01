@@ -3,15 +3,21 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { TranslationService } from '../services/translation.service';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 
 export class ContactComponent {
+  constructor(public ts: TranslationService) {
+
+  }
 
   http = inject(HttpClient);
 
@@ -25,6 +31,7 @@ export class ContactComponent {
     message: "",
   }
   mailTest = false;
+  showSuccess = false;
 
   onCheckboxChange() {
     this.isChecked = !this.isChecked;
@@ -56,6 +63,8 @@ export class ContactComponent {
     this.isHovered = false;
     this.showError = false;
     this.isSending = false;
+    this.showSuccess = true;
+    setTimeout(() => this.showSuccess = false, 3500);
   }
 
   post = {

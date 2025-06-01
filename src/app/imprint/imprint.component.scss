@@ -1,6 +1,9 @@
+:host {
+    height: 78vh;
+}
+
 .imprint-container {
     position: relative;
-    min-height: calc(100vh - 120px);
     padding: 2.5rem;
     margin-top: 80px;
     margin-bottom: 60px;
@@ -10,8 +13,8 @@
 
     .imprint-content {
         max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
+        // margin: 0 auto;
+        padding: 60px;
         font-size: 1rem;
         line-height: 1.6;
 

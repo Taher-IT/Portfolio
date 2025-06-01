@@ -2,26 +2,23 @@
     <div class="section-spacer"></div>
     <div class="container d-flex justify-content-center align-items-center">
         <div class="grid-box text-center">
-            <h2 class="title">Why me</h2>
+            <h2 class="title">{{ ts.get('about.title') |async }}</h2>
             <div class="row align-items-center content">
                 <div class="col-md-6 d-flex flex-column align-items-start left">
                     <div class="d-flex align-items-center mb-3">
                         <img src="../../assets/img/about/Map_icon.png" alt="Location Icon" class="icon me-2">
-                        <p class="logo mb-0"><strong class="p1">I am</strong> located in Hamburg..|</p>
+                        <p class="logo mb-0"><strong class="p1">{{ ts.get('about.iam') |async }}</strong>{{ ts.get('about.local') |async }}</p>
                     </div>
                     <div class="d-flex align-items-center">
                         <img src="../../assets/img/about/Remote_icon.png" alt="Location Icon" class="icon me-2">
-                        <p class="logo mb-0"><strong class="p1">I am</strong> open to work remote..|</p>
+                        <p class="logo mb-0"><strong class="p1">{{ ts.get('about.iam') |async }}</strong>{{ ts.get('about.remote') |async }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 right">
-                    <p class="p3">Why are you passionate about coding?
-                        You can include some key traits like: analytical thinking, creativity, persistence and
-                        collaboration.
-                        A problem-solving mindset is always nice to have</p>
+                    <p class="p3">{{ ts.get('about.passion') |async }}
                 </div>
             </div>
-            <a class="btn cta-button mt-4" href="#contact">Let's talk</a>
+            <a class="btn cta-button mt-4" href="#contact">{{ ts.get('about.talk') |async }}</a>
         </div>
     </div>
 </div>

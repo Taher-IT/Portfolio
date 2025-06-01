@@ -1,8 +1,8 @@
 <div class="footer-container">
     <div class="footer-inner">
         <div class="left-part">
-            <a routerLink="/imprint">Legal Notice</a>
-            <a routerLink="/privacy">Privacy Policy</a>
+            <a routerLink="/privacy">{{ ts.get('footer.privacy') | async }}</a>
+            <a routerLink="/imprint">{{ ts.get('footer.legal') | async }}</a>
             <p>© Taher Abdel Megid 2025</p>
         </div>
 

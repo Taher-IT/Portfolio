@@ -1,5 +1,5 @@
 <div class="references-section">
-    <h2 class="section-title">Need a teamplayer? Here is what my colleagues said about me</h2>
+    <h2 class="section-title">{{ ts.get('references.title') | async }}</h2>
 
     <div class="references-background">
         <div class="references-container">
@@ -10,11 +10,13 @@
                         <div class="reference-content">
                             <h3 class="reference-name">{{ ref.name }}</h3>
                             <p class="reference-project">
-                                Project: <span class="project-name">{{ ref.project }}</span>
+                                {{ ts.get('references.projectLabel') | async }}
+                                <span class="project-name">{{ ref.project }}</span>
                             </p>
-                            <p class="reference-quote">{{ ref.quote }}</p>
+                            <p class="reference-quote">{{ ts.get(ref.quoteKey) | async }}</p>
                             @if (ref.link) {
-                            <a [href]="ref.link" target="_blank" class="reference-link">Linked to Profile</a>
+                            <a [href]="ref.link" target="_blank" class="reference-link">
+                                {{ ts.get('references.linkLabel') | async }}</a>
                             }
                         </div>
                     </div>

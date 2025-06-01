@@ -7,15 +7,14 @@
   position: relative;
 
   .grid-box {
-    width: 860px;
+    width: 100%;
+    max-width: 1000px;
     height: 310px;
-    border-radius: 20px;
-    margin-bottom: 180px;
+    margin-bottom: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
     color: white;
 
     .cta-button {
@@ -35,6 +34,7 @@
 
     .content {
       width: 100%;
+      padding-bottom: 40px;
 
       .left {
         display: flex;
@@ -48,6 +48,7 @@
         p {
           font-size: 20px;
           font-family: 'Josefin Sans', sans-serif;
+          white-space: nowrap;
 
           .p1 {
             color: var(--logo-job);

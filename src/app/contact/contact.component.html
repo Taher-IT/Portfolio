@@ -1,12 +1,10 @@
 <div id="contact" class="contact-section">
     <div class="contact-container">
-        <h2 class="contact-title">Contact me</h2>
+        <h2 class="contact-title">{{ ts.get('contact.title') | async }}</h2>
 
         <div class="contact-info">
             <div class="info-left">
-                <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
-                    value to their projects through your work.<br>Example: Feel free to get in touch with job offers or
-                    opportunities such as:...</p>
+                <p>{{ ts.get('contact.speech') | async }}</p>
             </div>
 
             <div class="info-right">
@@ -24,35 +22,35 @@
                 </div>
             </div>
         </div>
-
+        @if (!showSuccess) {
         <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label for="name">{{ ts.get('contact.name') | async }}</label>
                     <input [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
                         placeholder="Please enter your Name..." required
                         pattern="^(?=.*[A-Za-zÄÖÜäöüß])[A-Za-zÄÖÜäöüß\s\-']+$" #name="ngModel">
                     @if (!name.valid && name.touched) {
-                    <span>Please enter a valid name</span>
+                    <span>{{ ts.get('contact.valName') | async }}</span>
                     }
                 </div>
                 <div class="form-group">
-                    <label for="email">Your Email</label>
+                    <label for="email">{{ ts.get('contact.email') | async }}</label>
                     <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
                         placeholder="Please enter your Email..." required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                     @if (!email.valid && email.touched) {
-                    <span>Please enter a valid email address</span>
+                    <span>{{ ts.get('contact.valEmail') | async }}</span>
                     }
                 </div>
             </div>
 
             <div class="form-group message-group">
-                <label for="message">Your Message</label>
+                <label for="message">{{ ts.get('contact.message') | async }}</label>
                 <textarea #message="ngModel" [(ngModel)]="contactData.message" rows="5" id="message" name="message"
                     placeholder="Hey, how can i help you?" required minlength="10"></textarea>
                 @if (!message.valid && message.touched) {
-                <span>Please enter a message</span>
+                <span>{{ ts.get('contact.valMessage') | async }}</span>
                 }
             </div>
 
@@ -64,18 +62,25 @@
                         <img [src]="getCheckboxImage()" alt="Checkbox" class="check-icon">
                     </label>
                     <label for="privacyCheck" class="privacy-text">
-                        I've read the <a routerLink="/privacy" class="privacy-link">privacy policy</a> and agree to the
-                        processing of my data as outlined.
+                        {{ ts.get('contact.checkRead') | async }}
+                        <a routerLink="/privacy" class="privacy-link">{{ ts.get('contact.privacy') | async }}</a>
+                        {{ ts.get('contact.agree') | async }}
                     </label>
                 </div>
                 <button type="submit" class="submit-btn" [disabled]="!contactForm.valid || !isChecked || isSending">
                     @if (isSending) {
-                    <span>Sending...</span>
+                    <span>{{ ts.get('contact.sending') | async }}</span>
                     } @else {
-                    <span>Send</span>
+                    <span>{{ ts.get('contact.send') | async }}</span>
                     }
                 </button>
             </div>
         </form>
+        }
+        @if (showSuccess) {
+        <div class="contact-success">
+            <p>{{ ts.get('contact.success') | async }}</p>
+        </div>
+        }
     </div>
 </div>

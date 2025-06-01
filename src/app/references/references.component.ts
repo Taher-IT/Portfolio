@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-references',
@@ -9,30 +10,30 @@ import { CommonModule } from '@angular/common';
   styleUrl: './references.component.scss'
 })
 export class ReferencesComponent {
+  constructor(public ts: TranslationService) {
+
+  }
   references = [
     {
+      id: 'ha',
       name: 'Ha Dao',
       project: 'Kochwelt',
-      quote: 'Amidst the hectic phases of our project, Taher remains calm under pressure, bringing focus and clarity to complex projects. His solution-driven approach and thoughtful demeanor make him both an effective problem-solver and a positive team presence.',
+      quoteKey: 'references.quotes.ha',
       link: 'https://google.com'
     },
     {
+      id: 'shardzhil',
       name: 'Shardzhil Mukhammad',
       project: 'Join',
-      quote: 'It has been a pleasure working with Taher. He is a highly professional, reliable team player who consistently supports his colleagues with expertise and positivity. His respectful, cooperative nature and problem-solving attitude make him a valuable asset to any team.',
+      quoteKey: 'references.quotes.shardzhil',
       link: 'https://google.com'
     },
     {
+      id: 'jon',
       name: 'Jonathan Michutta',
       project: 'Kochwelt',
-      quote: 'I had the opportunity to work with Taher on the Kochwelt project. He was always curious and asked many questions to better understand how processes worked. In this sense, he proved to be a good problem-finder, identifying key issues and potential challenges. Thank you for your contribution to the project!',
+      quoteKey: 'references.quotes.jon',
       link: 'https://google.com'
     },
-    // {
-    //   name: 'Evelyn Marx',
-    //   project: 'Join',
-    //   quote: 'He is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code.',
-    //   link: 'https://google.com'
-    // }
   ];
 }

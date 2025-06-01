@@ -1,5 +1,5 @@
 <div id="projects" class="projects-section">
-    <h2 class="section-title">My Projects</h2>
+    <h2 class="section-title">{{ ts.get('projectTitles.title') | async }}</h2>
 
     <div class="project-card-background">
         <div class="project-card-container">
@@ -7,54 +7,56 @@
                 <nav class="project-tabs">
                     <a *ngFor="let project of projects; let i = index" (click)="setActiveProject(i)"
                         [class.active]="activeProjectIndex === i">
-                        {{ project.name }}
+                        {{ ts.get(project.nameKey) | async }}
                     </a>
                 </nav>
 
                 <div class="project-details">
                     <div class="left-section">
                         <div class="section-with-icon">
-                            <img class="section-icon" [src]="projects[activeProjectIndex].description.icon"
+                            <img class="section-icon" [src]="projects[activeProjectIndex].descriptionIcon"
                                 alt="About icon">
                             <div>
-                                <h2>About the project <span class="duration">Duration: {{
-                                        projects[activeProjectIndex].duration
-                                        }}</span></h2>
-                                <p class="description">{{ projects[activeProjectIndex].description.text }}</p>
+                                <h2>{{ ts.get('projectTitles.about') | async }}<span class="duration">
+                                        {{ ts.get('projectTitles.duration') | async }}
+                                        {{ ts.get(projects[activeProjectIndex].durationKey) | async }}
+                                    </span></h2>
+                                <p class="description">{{ ts.get(projects[activeProjectIndex].descriptionKey) | async }}
+                                </p>
                             </div>
                         </div>
 
                         <div class="section-with-icon">
-                            <img class="section-icon" [src]="projects[activeProjectIndex].workProcess.icon"
+                            <img class="section-icon" [src]="projects[activeProjectIndex].processIcon"
                                 alt="Process icon">
                             <div>
-                                <h2>How I have organised my work process</h2>
-                                <p class="description">{{ projects[activeProjectIndex].workProcess.text }}</p>
+                                <h2>{{ ts.get('projectTitles.process') | async }}</h2>
+                                <p class="description">{{ ts.get(projects[activeProjectIndex].processKey) | async }}</p>
                             </div>
                         </div>
 
                         <div class="section-with-icon" *ngIf="projects[activeProjectIndex].teamwork">
-                            <img class="section-icon" [src]="projects[activeProjectIndex].groupExperience.icon"
+                            <img class="section-icon" [src]="projects[activeProjectIndex].groupIcon"
                                 alt="Teamwork icon">
                             <div>
-                                <h2>My group work experience</h2>
-                                <p class="description">{{ projects[activeProjectIndex].groupExperience.text }}</p>
+                                <h2>{{ ts.get('projectTitles.group') | async }}</h2>
+                                <p class="description">{{ ts.get(projects[activeProjectIndex].groupKey) | async }}</p>
                             </div>
                         </div>
 
                         <div class="section-with-icon" *ngIf="!projects[activeProjectIndex].teamwork">
-                            <img class="section-icon" [src]="projects[activeProjectIndex].learnt.icon"
+                            <img class="section-icon" [src]="projects[activeProjectIndex].learntIcon"
                                 alt="Learning icon">
                             <div>
-                                <h2>What I have learnt</h2>
-                                <p class="description">{{ projects[activeProjectIndex].learnt.text }}</p>
+                                <h2>{{ ts.get('projectTitles.learnt') | async }}</h2>
+                                <p class="description">{{ ts.get(projects[activeProjectIndex].learntKey) | async }}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="right-section">
                         <div class="tech-section">
-                            <h3>Technologies</h3>
+                            <h3>{{ ts.get('projectTitles.tech') | async }}</h3>
                             <div class="tech-icons">
                                 <img *ngFor="let tech of projects[activeProjectIndex].technologies" [src]="tech"
                                     alt="Technology">

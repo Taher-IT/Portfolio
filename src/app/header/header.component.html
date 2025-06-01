@@ -7,20 +7,20 @@
         </a>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('about')" href="#about"
-                    (click)="setCurrent('about')">About</a>
+                <a class="nav-link" [class.active]="isActive('about')" href="#about" (click)="setCurrent('about')">
+                    {{ ts.get('nav.about') | async }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('skills')" href="#skills"
-                    (click)="setCurrent('skills')">Skills</a>
+                <a class="nav-link" [class.active]="isActive('skills')" href="#skills" (click)="setCurrent('skills')">
+                    {{ ts.get('nav.skills') | async }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [class.active]="isActive('projects')" href="#projects"
-                    (click)="setCurrent('projects')">Projects</a>
+                    (click)="setCurrent('projects')">{{ ts.get('nav.projects') | async }}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [class.active]="isActive('contact')" href="#contact"
-                    (click)="setCurrent('contact')">Contact</a>
+                    (click)="setCurrent('contact')">{{ ts.get('nav.contact') | async }}</a>
             </li>
         </ul>
         <div class="lang-switch">

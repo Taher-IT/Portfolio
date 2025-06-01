@@ -1,18 +1,18 @@
 <app-header></app-header>
 <div class="imprint-container">
     <div class="imprint-content">
-        <h1>Impressum</h1>
+        <h1>{{ ts.get('imprint.title') | async }}</h1>
 
         <p>Taher Aboueleyoun Mehany Abdel Megid<br />
-            St&uuml;benplatz 3<br />
+            Stübenplatz 3<br />
             21107 Hamburg</p>
 
-        <h2>Kontakt</h2>
-        <p>Telefon: +49 15751234567<br />
+        <h2>{{ ts.get('imprint.contact') | async }}</h2>
+        <p>Tel: +49 15751234567<br />
             E-Mail: contact&#64;taher-abdel-megid.de</p>
 
-        <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+        <p>{{ ts.get('imprint.source') | async }}<a href="https://www.e-recht24.de">e-recht24.de</a></p>
 
-        <a routerLink="/" class="back-link">← Back to Home</a>
+        <a routerLink="/" class="back-link">← {{ ts.get('imprint.backBtn') | async }}</a>
     </div>
 </div>

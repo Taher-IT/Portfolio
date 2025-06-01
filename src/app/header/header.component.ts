@@ -2,20 +2,22 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+import { TranslationService } from '../services/translation.service';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements AfterViewInit, OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
   isScrolled: boolean = false;
   isSpecialPage: boolean = false;
   currentSection: string = '';
-  selectedLanguage: 'en' | 'de' = 'en';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public ts: TranslationService) { }
 
   ngAfterViewInit() {
     this.setupScrollListener();
@@ -23,15 +25,20 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd))
-      .subscribe(() =>
-        this.isSpecialPage = ['/imprint', '/privacy'].includes(this.router.url)
-      );
+      .subscribe(() => {
+        this.isSpecialPage = ['/imprint', '/privacy'].includes(this.router.url);
+
+        if (this.isSpecialPage) {
+          this.isScrolled = true;
+          document.querySelector('.navbar')?.classList.add('special-page');
+        }
+      });
   }
 
   setupScrollListener() {
     window.addEventListener('scroll', () => {
       if (this.isSpecialPage) {
-        this.isScrolled = true;          // header always fixed on special pages
+        this.isScrolled = true;
         return;
       }
 
@@ -39,14 +46,13 @@ export class HeaderComponent implements AfterViewInit, OnInit {
       const navbar = document.querySelector('.navbar') as HTMLElement | null;
 
       if (!heroSection || !navbar) {
-        this.isScrolled = true;          // fail-safe on pages without hero
+        this.isScrolled = true;
         return;
       }
 
       const sectionBottom = heroSection.getBoundingClientRect().bottom;
-      const headerHeight = navbar.offsetHeight || 128;           // matches .navbar
+      const headerHeight = navbar.offsetHeight || 128;
 
-      // stick once the hero has scrolled past the header’s height
       this.isScrolled = sectionBottom <= headerHeight;
     });
   }
@@ -60,10 +66,10 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   }
 
   setLanguage(lang: 'en' | 'de') {
-    this.selectedLanguage = lang;
+    this.ts.switch(lang);
   }
 
   isLanguage(lang: 'en' | 'de'): boolean {
-    return this.selectedLanguage === lang;
+    return this.ts.current() === lang;
   }
 }
