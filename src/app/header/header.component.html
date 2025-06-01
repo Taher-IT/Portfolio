@@ -7,17 +7,29 @@
         </a>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('about')" href="#about">About</a>
+                <a class="nav-link" [class.active]="isActive('about')" href="#about"
+                    (click)="setCurrent('about')">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('skills')" href="#skills">Skills</a>
+                <a class="nav-link" [class.active]="isActive('skills')" href="#skills"
+                    (click)="setCurrent('skills')">Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('projects')" href="#projects">Projects</a>
+                <a class="nav-link" [class.active]="isActive('projects')" href="#projects"
+                    (click)="setCurrent('projects')">Projects</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [class.active]="isActive('contact')" href="#contact">Contact</a>
+                <a class="nav-link" [class.active]="isActive('contact')" href="#contact"
+                    (click)="setCurrent('contact')">Contact</a>
             </li>
         </ul>
+        <div class="lang-switch">
+            <button class="lang-btn" (click)="setLanguage('de')" [class.active]="isLanguage('de')">
+                DE
+            </button>
+            <button class="lang-btn" (click)="setLanguage('en')" [class.active]="isLanguage('en')">
+                EN
+            </button>
+        </div>
     </div>
 </nav>

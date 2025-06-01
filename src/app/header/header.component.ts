@@ -9,10 +9,11 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements AfterViewInit,OnInit {
+export class HeaderComponent implements AfterViewInit, OnInit {
   isScrolled: boolean = false;
   isSpecialPage: boolean = false;
   currentSection: string = '';
+  selectedLanguage: 'en' | 'de' = 'en';
 
   constructor(private router: Router) { }
 
@@ -52,5 +53,17 @@ export class HeaderComponent implements AfterViewInit,OnInit {
 
   isActive(section: string): boolean {
     return this.currentSection === section;
+  }
+
+  setCurrent(section: string) {
+    this.currentSection = section;
+  }
+
+  setLanguage(lang: 'en' | 'de') {
+    this.selectedLanguage = lang;
+  }
+
+  isLanguage(lang: 'en' | 'de'): boolean {
+    return this.selectedLanguage === lang;
   }
 }

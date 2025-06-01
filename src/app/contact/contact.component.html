@@ -1,79 +1,81 @@
 <div id="contact" class="contact-section">
-    <h2 class="contact-title">Contact me</h2>
+    <div class="contact-container">
+        <h2 class="contact-title">Contact me</h2>
 
-    <div class="contact-info">
-        <div class="info-left">
-            <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
-                value to their projects through your work.<br>Example: Feel free to get in touch with job offers or
-                opportunities such as:...</p>
+        <div class="contact-info">
+            <div class="info-left">
+                <p>Encourage people to contact you and describe what role you are interested in. Show that you will add
+                    value to their projects through your work.<br>Example: Feel free to get in touch with job offers or
+                    opportunities such as:...</p>
+            </div>
+
+            <div class="info-right">
+                <div class="contact-method">
+                    <a href="mailto:contact@taher-abdel-megid.de" class="contact-link">
+                        <span class="contact-icon email-icon"></span>
+                        <span>E-mail: contact&#64;taher-abdel-megid.de</span>
+                    </a>
+                </div>
+                <div class="contact-method">
+                    <a href="tel:+4915751234567" class="contact-link">
+                        <span class="contact-icon phone-icon"></span>
+                        <span>Tel: +49 1575 123 4567</span>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="info-right">
-            <div class="contact-method">
-                <a href="mailto:contact@taher-abdel-megid.de" class="contact-link">
-                    <span class="contact-icon email-icon"></span>
-                    <span>E-mail: contact&#64;taher-abdel-megid.de</span>
-                </a>
+        <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
+                        placeholder="Please enter your Name..." required
+                        pattern="^(?=.*[A-Za-zÄÖÜäöüß])[A-Za-zÄÖÜäöüß\s\-']+$" #name="ngModel">
+                    @if (!name.valid && name.touched) {
+                    <span>Please enter a valid name</span>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                        placeholder="Please enter your Email..." required
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
+                    @if (!email.valid && email.touched) {
+                    <span>Please enter a valid email address</span>
+                    }
+                </div>
             </div>
-            <div class="contact-method">
-                <a href="tel:+4915751234567" class="contact-link">
-                    <span class="contact-icon phone-icon"></span>
-                    <span>Tel: +49 1575 123 4567</span>
-                </a>
+
+            <div class="form-group message-group">
+                <label for="message">Your Message</label>
+                <textarea #message="ngModel" [(ngModel)]="contactData.message" rows="5" id="message" name="message"
+                    placeholder="Hey, how can i help you?" required minlength="10"></textarea>
+                @if (!message.valid && message.touched) {
+                <span>Please enter a message</span>
+                }
             </div>
-        </div>
+
+            <div class="privacy-check">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="privacyCheck" class="checkbox-input" (change)="onCheckboxChange()"
+                        required [checked]="isChecked">
+                    <label for="privacyCheck" class="checkbox-label">
+                        <img [src]="getCheckboxImage()" alt="Checkbox" class="check-icon">
+                    </label>
+                    <label for="privacyCheck" class="privacy-text">
+                        I've read the <a routerLink="/privacy" class="privacy-link">privacy policy</a> and agree to the
+                        processing of my data as outlined.
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn" [disabled]="!contactForm.valid || !isChecked || isSending">
+                    @if (isSending) {
+                    <span>Sending...</span>
+                    } @else {
+                    <span>Send</span>
+                    }
+                </button>
+            </div>
+        </form>
     </div>
-
-    <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="name">Your Name...</label>
-                <input [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
-                    placeholder="Please enter your Name..." required
-                    pattern="^(?=.*[A-Za-zÄÖÜäöüß])[A-Za-zÄÖÜäöüß\s\-']+$" #name="ngModel">
-                @if (!name.valid && name.touched) {
-                <span>Please enter a valid name</span>
-                }
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                    placeholder="Please enter your Email..." required
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
-                @if (!email.valid && email.touched) {
-                <span>Please enter a valid email address</span>
-                }
-            </div>
-        </div>
-
-        <div class="form-group message-group">
-            <label for="message">Your Message</label>
-            <textarea #message="ngModel" [(ngModel)]="contactData.message" rows="5" id="message" name="message"
-                placeholder="Hey, how can i help you?" required minlength="10"></textarea>
-            @if (!message.valid && message.touched) {
-            <span>Please enter a message</span>
-            }
-        </div>
-
-        <div class="privacy-check">
-            <div class="checkbox-container">
-                <input type="checkbox" id="privacyCheck" class="checkbox-input" (change)="onCheckboxChange()" required
-                    [checked]="isChecked">
-                <label for="privacyCheck" class="checkbox-label">
-                    <img [src]="getCheckboxImage()" alt="Checkbox" class="check-icon">
-                </label>
-                <label for="privacyCheck" class="privacy-text">
-                    I've read the <a routerLink="/privacy" class="privacy-link">privacy policy</a> and agree to the
-                    processing of my data as outlined.
-                </label>
-            </div>
-            <button type="submit" class="submit-btn" [disabled]="!contactForm.valid || !isChecked || isSending">
-                @if (isSending) {
-                <span>Sending...</span>
-                } @else {
-                <span>Send</span>
-                }
-            </button>
-        </div>
-    </form>
 </div>
