@@ -176,6 +176,7 @@ h2 {
     gap: 16px;
     justify-content: center;
     align-items: center;
+    padding-right: 16px;
 
     .social-icon {
       position: relative;
@@ -212,4 +213,42 @@ h2 {
       }
     }
   }
+}
+
+@media (max-width: 1430px) {
+
+  .atf-container {
+    gap: 8px !important;
+  }
+
+  .info-container {
+    margin-left: 28px !important;
+  }
+
+  .heroPic {
+    width: clamp(300px, 35vw, 600px);
+    min-width: 80px;
+    height: auto;
+  }
+
+  .heroPicBG1,
+  .heroPicBG2 {
+    width: clamp(340px, 40vw, 640px);
+    min-width: 100px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1210px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 960px) {
+  
 }

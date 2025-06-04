@@ -1,7 +1,7 @@
 .privacy-container {
     position: relative;
     min-height: calc(100vh - 120px);
-    padding: 2.5rem 160px;
+    padding: 2.5rem;
     margin-top: 80px;
     margin-bottom: 60px;
     overflow-y: auto;
@@ -66,4 +66,25 @@
         background-color: var(--logo-job);
         text-decoration: none;
     }
+}
+
+@media (max-width: 600px) {
+
+    .privacy-container {
+        padding: 3rem 0.5rem 2.5rem 0.5rem !important;
+    }
+
+    h1 {
+        font-size: 28px !important;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-size: 22px !important;
+    }
+    p {
+        font-size: 16px !important;
+    }
+
 }

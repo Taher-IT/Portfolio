@@ -13,7 +13,7 @@
 
     .imprint-content {
         max-width: 800px;
-        // margin: 0 auto;
+        margin: 0 auto;
         padding: 60px;
         font-size: 1rem;
         line-height: 1.6;
@@ -60,4 +60,30 @@
         background-color: var(--logo-job);
         text-decoration: none;
     }
+}
+
+@media (max-width: 500px) {
+
+    .imprint-container {
+        padding: 3rem 0.5rem 2.5rem 0.5rem !important;
+    }
+
+    .imprint-content {
+        padding: 3rem 0 2.5rem 0 !important;
+    }
+
+    h1 {
+        font-size: 28px !important;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-size: 22px !important;
+    }
+
+    p {
+        font-size: 16px !important;
+    }
+
 }
