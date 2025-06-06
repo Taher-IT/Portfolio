@@ -97,4 +97,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isLanguage(lang: 'en' | 'de'): boolean {
     return this.ts.current() === lang;
   }
+
+  get logoSrc(): string {
+    const isMobile = window.innerWidth <= 960;
+    const showBurgerLogo = this.isMenuOpen || this.isScrolled || this.isSpecialPage;
+
+    return (isMobile && showBurgerLogo)
+      ? 'assets/img/logos/logo_icon.png'
+      : 'assets/img/logos/Logo_icon_nav.png';
+  }
 }
