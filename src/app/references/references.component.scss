@@ -150,3 +150,46 @@
         color: var(--logo-name);
     }
 }
+
+
+@media (max-width: 560px) {
+    .section-title {
+        font-size: 22px;
+    }
+    .references-container {
+        padding: 0 8px;
+    }
+
+    .references-box {
+        height: auto;
+        min-height: 400px;
+        gap: 8px;
+    }
+
+    .reference-card {
+        max-width: 320px;
+        height: 380px;
+    }
+
+    .reference-bg {
+
+        &::before,
+        &::after {
+            background-size: contain;
+        }
+    }
+
+    .reference-content {
+        width: 90%;
+        padding: 0 10px;
+
+        .reference-name {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}

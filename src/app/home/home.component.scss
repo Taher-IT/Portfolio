@@ -1,0 +1,13 @@
+:host {
+    display: block;
+}
+
+app-hero,
+app-about,
+app-skills,
+app-projects,
+app-references,
+app-contact {
+    display: block;
+    scroll-margin-top: 128px;
+}

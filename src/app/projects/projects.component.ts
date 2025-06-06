@@ -22,3 +22,19 @@ export class ProjectsComponent {
     this.activeProjectIndex = index;
   }
 }
+  // will add later to get the selected index and display the selected tab to first spot
+  // displayedProjects: any[] = [];
+
+  // ngOnInit() {
+  //   this.displayedProjects = [...this.projects];
+  // }
+
+  // setActiveProject(index: number) {
+  //   const actualIndex = this.projects.indexOf(this.displayedProjects[index]);
+  //   this.activeProjectIndex = actualIndex;
+
+  //   this.displayedProjects = [
+  //     this.projects[actualIndex],
+  //     ...this.projects.filter((_, i) => i !== actualIndex)
+  //   ];
+  // }

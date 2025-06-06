@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterLink, } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 import { TranslationService } from '../services/translation.service';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -16,11 +16,21 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isScrolled: boolean = false;
   isSpecialPage: boolean = false;
   currentSection: string = '';
+  isMenuOpen: boolean = false;
 
   constructor(private router: Router, public ts: TranslationService) { }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   ngAfterViewInit() {
     this.setupScrollListener();
+    this.updateScrollState();
   }
 
   ngOnInit() {
@@ -36,25 +46,32 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   setupScrollListener() {
-    window.addEventListener('scroll', () => {
-      if (this.isSpecialPage) {
-        this.isScrolled = true;
-        return;
-      }
+    window.addEventListener('scroll', () => this.updateScrollState());
+    window.addEventListener('resize', () => this.updateScrollState());
+  }
 
-      const heroSection = document.querySelector('.hero-section') as HTMLElement | null;
-      const navbar = document.querySelector('.navbar') as HTMLElement | null;
+  private updateScrollState(): void {
+    if (this.shouldStickHeader()) {
+      this.isScrolled = true;
+      return;
+    }
 
-      if (!heroSection || !navbar) {
-        this.isScrolled = true;
-        return;
-      }
+    const hero = document.querySelector('.hero-section') as HTMLElement | null;
+    const navbar = document.querySelector('.navbar') as HTMLElement | null;
 
-      const sectionBottom = heroSection.getBoundingClientRect().bottom;
-      const headerHeight = navbar.offsetHeight || 128;
+    if (!hero || !navbar) {
+      this.isScrolled = true;
+      return;
+    }
 
-      this.isScrolled = sectionBottom <= headerHeight;
-    });
+    const headerHeight = navbar.offsetHeight || 128;
+    const heroBottom = hero.getBoundingClientRect().bottom;
+
+    this.isScrolled = heroBottom <= headerHeight;
+  }
+
+  private shouldStickHeader(): boolean {
+    return this.isSpecialPage || window.innerWidth <= 960;
   }
 
   isActive(section: string): boolean {
@@ -63,6 +80,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   setCurrent(section: string) {
     this.currentSection = section;
+    if (section) {
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   }
 
   setLanguage(lang: 'en' | 'de') {

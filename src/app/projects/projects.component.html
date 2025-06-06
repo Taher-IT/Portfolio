@@ -1,5 +1,5 @@
 <div id="projects" class="projects-section">
-    <h2 class="section-title">{{ ts.get('projectTitles.title') | async }}</h2>
+    <h1 class="section-title">{{ ts.get('projectTitles.title') | async }}</h1>
 
     <div class="project-card-background">
         <div class="project-card-container">
@@ -10,6 +10,11 @@
                         {{ ts.get(project.nameKey) | async }}
                     </a>
                 </nav>
+
+                <!-- <a *ngFor="let project of displayedProjects; let i = index" (click)="setActiveProject(i)"
+                    [class.active]="projects.indexOf(project) === activeProjectIndex">
+                    {{ ts.get(project.nameKey) | async }}
+                </a> function to place the activated tab at the first spot -->
 
                 <div class="project-details">
                     <div class="left-section">

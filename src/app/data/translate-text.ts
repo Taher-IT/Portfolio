@@ -1,8 +1,6 @@
-import { projects } from "./projects";
-
 export const TRANSLATIONS = {
     en: {
-        nav: { about: "About", skills: "Skills", projects: "Projects", contact: "Contact" },
+        nav: { about: "About", skills: "Skills", projects: "Projects", contact: "Contact", privacy: "Privacy Policy", imprint: "Legal Notice", },
         footer: { legal: "Legal Notice", privacy: "Privacy Policy" },
         hero: { job: "FRONTEND DEVELOPER" },
         about: {
@@ -53,9 +51,9 @@ export const TRANSLATIONS = {
             projectLabel: "Project:",
             linkLabel: "Linked to Profile",
             quotes: {
-                ha: "Amidst the hectic phases of our project, Taher remains calm under pressure, bringing focus and clarity to complex projects. His solution-driven approach and thoughtful demeanor make him both an effective problem-solver and a positive team presence.",
-                shardzhil: "It has been a pleasure working with Taher. He is a highly professional, reliable team player who consistently supports his colleagues with expertise and positivity. His respectful, cooperative nature and problem-solving attitude make him a valuable asset to any team.",
-                jon: "I had the opportunity to work with Taher on the Kochwelt project. He was always curious and asked many questions to better understand how processes worked. In this sense, he proved to be a good problem-finder, identifying key issues and potential challenges. Thank you for your contribution to the project!"
+                ha: "Taher stays calm under pressure and brings clarity to complex projects. His solutions-focused mindset and thoughtful nature make him a great team player.",
+                shardzhil: "Taher is a reliable, professional team player who supports others with expertise and a positive attitude. A true asset to any team",
+                jon: "Working with Taher on Kochwelt was great. He asked thoughtful questions, identified key issues, and helped uncover potential challenges."
             }
         },
         contact: {
@@ -165,7 +163,7 @@ export const TRANSLATIONS = {
     },
 
     de: {
-        nav: { about: "Über mich", skills: "Fähigkeiten", projects: "Projekte", contact: "Kontakt" },
+        nav: { about: "Über mich", skills: "Fähigkeiten", projects: "Projekte", contact: "Kontakt", privacy: "Datenschutz", imprint: "Impressum", },
         footer: { legal: "Impressum", privacy: "Datenschutz" },
         hero: { job: "FRONTEND ENTWICKLER" },
         about: {
@@ -216,9 +214,9 @@ export const TRANSLATIONS = {
             projectLabel: "Projekt:",
             linkLabel: "Link zum Profil",
             quotes: {
-                ha: "Selbst in hektischen Phasen blieb Taher ruhig, brachte Fokus und Klarheit in komplexe Aufgaben. Seine lösungsorientierte Art macht ihn zu einem effektiven Problemlöser und positiven Teammitglied.",
-                shardzhil: "Die Zusammenarbeit mit Taher war ein Vergnügen. Er ist professionell, zuverlässig und unterstützt Kollegen stets mit Fachwissen und guter Laune. Seine kooperative Haltung macht ihn zu einer echten Bereicherung für jedes Team.",
-                jon: "Ich konnte mit Taher am Kochwelt-Projekt arbeiten. Er stellte viele Fragen, um Abläufe besser zu verstehen, und bewies dabei ein gutes Gespür für Probleme. Danke für deinen Beitrag zum Projekt!"
+                ha: "Taher bleibt auch unter Druck ruhig und bringt Klarheit in komplexe Projekte. Sein lösungsorientiertes Denken und seine besonnene Art machen ihn zu einem tollen Teamplayer.",
+                shardzhil: "Taher ist ein zuverlässiger, professioneller Teamplayer, der andere mit Fachwissen und positiver Einstellung unterstützt. Eine echte Bereicherung für jedes Team.",
+                jon: "Die Zusammenarbeit mit Taher bei Kochwelt war großartig. Er stellte gezielte Fragen, erkannte wichtige Probleme und half, Herausforderungen frühzeitig zu identifizieren."
             }
         },
         contact: {

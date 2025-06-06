@@ -1,7 +1,8 @@
 <nav class="navbar" [class.scrolled]="isScrolled" [class.special-page]="isSpecialPage">
     <div class="container">
         <a class="navbar-brand" href="#home">
-            <img src="assets/img/logos/Logo_icon_nav.png" alt="Logo Navbar">
+            <img [src]="isScrolled ? 'assets/img/logos/logo_icon.png' : 'assets/img/logos/Logo_icon_nav.png'"
+                alt="Logo Navbar">
             <p class="logo-name">Taher A.</p>
             <p class="logo-job">developer</p>
         </a>
@@ -30,6 +31,36 @@
             <button class="lang-btn" (click)="setLanguage('en')" [class.active]="isLanguage('en')">
                 EN
             </button>
+        </div>
+        <button class="burger" (click)="toggleMenu()" [class.open]="isMenuOpen">
+            <img src="assets/img/header/Burger_menu.svg" alt="Navigation Menu">
+        </button>
+        <div class="overlay" [class.open]="isMenuOpen" (click)="closeMenu()">
+            <nav class="overlay-card">
+                <div class="shape" (click)="$event.stopPropagation()">
+                    <ul class="overlay-menu">
+                        <li><a [routerLink]="['/']" fragment="about" (click)="closeMenu(); setCurrent('about')">{{
+                                ts.get('nav.about') | async }}</a></li>
+                        <li><a [routerLink]="['/']" fragment="skills" (click)="closeMenu(); setCurrent('skills')">{{
+                                ts.get('nav.skills') | async }}</a></li>
+                        <li><a [routerLink]="['/']" fragment="projects" (click)="closeMenu(); setCurrent('projects')">{{
+                                ts.get('nav.projects') | async }}</a></li>
+                        <li><a [routerLink]="['/']" fragment="contact" (click)="closeMenu(); setCurrent('contact')">{{
+                                ts.get('nav.contact') | async }}</a></li>
+                        <li><a routerLink="/privacy" (click)="closeMenu()">{{ ts.get('nav.privacy') | async }}</a></li>
+                        <li><a routerLink="/imprint" (click)="closeMenu()">{{ ts.get('nav.imprint') | async }}</a></li>
+                    </ul>
+                    <div class="overlay-lang">
+                        <button class="lang-btn" (click)="setLanguage('de')" [class.active]="isLanguage('de')">
+                            DE
+                        </button>
+                        <button class="lang-btn" (click)="setLanguage('en')" [class.active]="isLanguage('en')">
+                            EN
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <button class="close" (click)="toggleMenu()">×</button>
         </div>
     </div>
 </nav>
