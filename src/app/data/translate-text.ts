@@ -4,10 +4,10 @@ export const TRANSLATIONS = {
         footer: { legal: "Legal Notice", privacy: "Privacy Policy" },
         hero: { job: "FRONTEND DEVELOPER" },
         about: {
-            title: "Why me", iam: "I am ", local: "locaten in Hamburg..|", remote: "open to work remote..|", talk: "Let's talk",
+            title: "Why me", iam: "I am ", talk: "Let's talk",
             passion: "As a passionate developer who fell in love with coding because of the challenges in turning ideas into reality, I enjoy working in a structured way and finding solutions to problems. I am always ready to learn new things, grow with each project, and help the team achieve great results together.",
         },
-        skills: { title: "My Skills", learning: "I am currently learning", describtion: "I am currently learning React to broaden my frontend skills and keep up with the latest technologies." },
+        skills: { title: "My Skills", learning: "I am currently learning", description: "I am currently learning React to broaden my frontend skills and keep up with the latest technologies." },
         projectTitles: {
             title: "My Projects", about: "About the project ", duration: "Duration: ", process: "How I have organised my work", group: "My group work experience",
             learnt: "What I have learnt", tech: "Technologies",
@@ -38,7 +38,7 @@ export const TRANSLATIONS = {
                 learnt: ""
             },
             dabubble: {
-                name: "(WIP) DA Bubble",
+                name: "WIP",
                 duration: "3 weeks",
                 description: "A Slack-style chat app with channels, real-time messaging, and an intuitive interface.",
                 process: "I kept the codebase clean by following Angular best practices and modular design.",
@@ -47,7 +47,7 @@ export const TRANSLATIONS = {
             }
         },
         references: {
-            title: "Need a teamplayer? Here is what my colleagues said about me",
+            title: "Need a team player? Here's what my colleagues say about me",
             projectLabel: "Project:",
             linkLabel: "Linked to Profile",
             quotes: {
@@ -67,7 +67,7 @@ export const TRANSLATIONS = {
             valMessage: "Please enter a message",
             checkRead: "I've read the ",
             privacy: "Privacy Policy",
-            agree: "and agree to the processing of my data.",
+            agree: "and I agree to the processing of my data.",
             send: "Send",
             sending: "Sending...",
             success: "Your message has been sent successfully!",
@@ -167,12 +167,12 @@ export const TRANSLATIONS = {
         footer: { legal: "Impressum", privacy: "Datenschutz" },
         hero: { job: "FRONTEND ENTWICKLER" },
         about: {
-            title: "Über mich", iam: "Ich bin ", local: "wohnhaft in Hamburg..|", remote: "offen für Homeoffice..|", talk: "Melde dich",
+            title: "Über mich", iam: "Ich bin ", talk: "Melde dich",
             passion: "Als leidenschaftlicher Entwickler, der das Programmieren lieben gelernt hat, weil es so spannend ist, Ideen in die Realität umzusetzen, arbeite ich gerne strukturiert und finde kreative Lösungen für Herausforderungen. Ich lerne stets Neues dazu, wachse mit jedem Projekt und unterstütze das Team, um gemeinsam Erfolge zu erzielen.",
         },
-        skills: { title: "Meine Fähigkeiten", learning: "Ich lerne momentan", describtion: "Ich lerne gerade React, um meine Frontend-Kenntnisse zu erweitern und mit den neuesten Technologien Schritt zu halten." },
+        skills: { title: "Meine Fähigkeiten", learning: "Ich lerne momentan", description: "Ich lerne gerade React, um meine Frontend-Kenntnisse zu erweitern und mit den neuesten Technologien Schritt zu halten." },
         projectTitles: {
-            title: "Meine Projekte", about: "Über die Projekte ", duration: "Dauer: ", process: "Wie ich meine Arbeit organisiert habe", group: "My Teamarbeitserfahrung",
+            title: "Meine Projekte", about: "Über das Projekt ", duration: "Dauer: ", process: "Wie ich meine Arbeit organisiert habe", group: "Meine Teamarbeitserfahrung",
             learnt: "Was ich gelernt habe", tech: "Technologien",
         },
         projects: {
@@ -197,7 +197,7 @@ export const TRANSLATIONS = {
                 duration: "4 Wochen",
                 description: "Ein Kanban-Board für Aufgabenverwaltung mit Drag-and-Drop.",
                 process: "Ich habe ein intuitives UI erstellt und State-Management genutzt, um Aufgaben synchron zu halten.",
-                group: "Wir haben eng zusammengearbeitet und per Pull-Request sauberen Code sichergestellt.",
+                group: "Wir haben eng zusammengearbeitet und durch Pull-Requests sauberen Code gewährleistet.",
                 learnt: ""
             },
             dabubble: {
@@ -232,8 +232,8 @@ export const TRANSLATIONS = {
             privacy: "Datenschutzerklärung",
             agree: "gelesen, und stimme der Verarbeitung meiner Daten zu.",
             send: "Senden",
-            sending: "wird gesendet...",
-            success: "Ihre Nachricht wurde erfolgreich geschickt!",
+            sending: "Wird gesendet...",
+            success: "Ihre Nachricht wurde erfolgreich gesendet!",
         },
         imprint: {
             title: "Impressum", contact: "Kontakt", source: "Quelle: ", backBtn: "Zurück zur Hauptseite",
@@ -243,7 +243,7 @@ export const TRANSLATIONS = {
             s1: {
                 t1: "1. Datenschutz auf einen Blick",
                 h1: "Allgemeine Hinweise",
-                p1: "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
+                p1: "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
                 h2: "Datenerfassung auf dieser Website",
                 h3: "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
                 p2: "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.",
@@ -252,7 +252,7 @@ export const TRANSLATIONS = {
                 p4: "Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.",
                 h5: "Wofür nutzen wir Ihre Daten?",
                 p5: "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.",
-                h6: "Welche Rechte haben Sie bezöglich Ihrer Daten?",
+                h6: "Welche Rechte haben Sie bezüglich Ihrer Daten?",
                 p6: "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
                 p7: "Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.",
             },

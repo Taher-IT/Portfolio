@@ -19,21 +19,21 @@ export class ReferencesComponent {
       name: 'Ha Dao',
       project: 'Kochwelt',
       quoteKey: 'references.quotes.ha',
-      link: 'https://google.com'
+      link: 'https://www.linkedin.com/in/dao-cong-viet-ha/'
     },
     {
       id: 'shardzhil',
       name: 'Shardzhil Mukhammad',
       project: 'Join',
       quoteKey: 'references.quotes.shardzhil',
-      link: 'https://google.com'
+      link: 'https://www.linkedin.com/in/mukhammad-shardzhil-a2565213a/'
     },
     {
       id: 'jon',
       name: 'Jonathan Michutta',
       project: 'Kochwelt',
       quoteKey: 'references.quotes.jon',
-      link: 'https://google.com'
+      link: 'linkedin.com/in/jonathan-michutta-527722210/'
     },
   ];
 }

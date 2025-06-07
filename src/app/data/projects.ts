@@ -20,7 +20,7 @@ export const projects = [
             '/assets/img/skills/Javascript.png'
         ],
         image: '/assets/img/projects/ElPolloLoco.png',
-        liveLink: 'https://taher-abdel-megid.de',
+        liveLink: 'https://ploco.taher-abdel-megid.de/',
         githubLink: 'https://github.com/Taher-IT'
     },
     // {
@@ -68,7 +68,7 @@ export const projects = [
             '/assets/img/skills/css.png'
         ],
         image: '/assets/img/projects/Joint.png',
-        liveLink: 'https://taher-abdel-megid.de/join/',
+        liveLink: 'https:join.taher-abdel-megid.de/',
         githubLink: 'https://github.com/Taher-IT/Join-Project'
     },
     // {
