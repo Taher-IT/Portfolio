@@ -68,7 +68,7 @@ export const projects = [
             '/assets/img/skills/css.png'
         ],
         image: '/assets/img/projects/Joint.png',
-        liveLink: 'https:join.taher-abdel-megid.de/',
+        liveLink: 'https://join.taher-abdel-megid.de/',
         githubLink: 'https://github.com/Taher-IT/Join-Project'
     },
     // {

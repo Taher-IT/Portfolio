@@ -33,7 +33,7 @@ export class ReferencesComponent {
       name: 'Jonathan Michutta',
       project: 'Kochwelt',
       quoteKey: 'references.quotes.jon',
-      link: 'linkedin.com/in/jonathan-michutta-527722210/'
+      link: 'https://www.linkedin.com/in/jonathan-michutta-527722210/'
     },
   ];
 }

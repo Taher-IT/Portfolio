@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="name">{{ ts.get('contact.name') | async }}</label>
                     <input [(ngModel)]="contactData.name" type="text" id="name" name="name" minlength="2"
-                        placeholder="Please enter your Name..." required
+                        placeholder="{{ ts.get('contact.nameHolder') | async }}" required
                         pattern="^(?=.*[A-Za-zÄÖÜäöüß])[A-Za-zÄÖÜäöüß\s\-']+$" #name="ngModel">
                     @if (!name.valid && name.touched) {
                     <span>{{ ts.get('contact.valName') | async }}</span>
@@ -37,7 +37,7 @@
                 <div class="form-group">
                     <label for="email">{{ ts.get('contact.email') | async }}</label>
                     <input [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        placeholder="Please enter your Email..." required
+                        placeholder="{{ ts.get('contact.emailHolder') | async }}" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" #email="ngModel">
                     @if (!email.valid && email.touched) {
                     <span>{{ ts.get('contact.valEmail') | async }}</span>
@@ -48,7 +48,7 @@
             <div class="form-group message-group">
                 <label for="message">{{ ts.get('contact.message') | async }}</label>
                 <textarea #message="ngModel" [(ngModel)]="contactData.message" rows="5" id="message" name="message"
-                    placeholder="Hey, how can i help you?" required minlength="10"></textarea>
+                    placeholder="{{ ts.get('contact.messageHolder') | async }}" required minlength="10"></textarea>
                 @if (!message.valid && message.touched) {
                 <span>{{ ts.get('contact.valMessage') | async }}</span>
                 }

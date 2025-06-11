@@ -355,6 +355,30 @@
 }
 
 @media (max-width: 520px) {
+    .navbar {
+        height: 90px;
+    }
+
+    .navbar-brand {
+        padding-top: 6px;
+
+        img {
+            height: 28px; // Reduced from ~40px (adjust based on your original)
+            width: auto;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .logo-name,
+    .logo-job {
+        font-size: 14px; // Reduced from 16px
+    }
+
+    .burger {
+        width: 28px;
+        height: 28px;
+    }
+
     .overlay-menu {
         padding-top: 20px;
 

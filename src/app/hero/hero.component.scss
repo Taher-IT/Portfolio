@@ -262,7 +262,7 @@ h2 {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
-    padding-bottom: 64px;
+    // padding-bottom: 64px;
     height: 100vh;
   }
 
@@ -295,7 +295,11 @@ h2 {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 540px) {
+  .atf-container {
+    padding-top: 30px;
+  }
+
   .heroPic {
     width: clamp(200px, 15vw, 300px);
     min-width: 60px;

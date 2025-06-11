@@ -1,13 +1,17 @@
 #contact {
-    scroll-margin: 128px;
+    scroll-margin-top: var(--header-height);
+
+    @media (max-width: 560px) {
+        scroll-margin-top: var(--header-height-mobile);
+    }
 }
 
 .contact-section {
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 140px 40px 40px 40px;
-    margin-bottom: 120px;
+    padding: 60px 40px 40px 40px;
+    margin-bottom: 80px;
     color: var(--logo-name);
     font-family: 'Josefin Sans', sans-serif;
 
